@@ -1,0 +1,317 @@
+1----
+
+// Define two numbers
+const num1 = 12;
+const num2 = 5;
+
+// Perform arithmetic operations
+const addition       = num1 + num2;  // Adds values
+const subtraction    = num1 - num2;  // Subtracts second from first
+const multiplication = num1 * num2;  // Multiplies values
+const division       = num1 / num2;  // Divides first by second
+const modulus        = num1 % num2;  // Returns division remainder
+const exponentiation = num1 ** num2; // Raises first to the power of second
+
+// Print the results to the console
+console.log(`Numbers: ${num1} and ${num2}\n`);
+console.log(`Addition (+):        ${addition}`);
+console.log(`Subtraction (-):     ${subtraction}`);
+console.log(`Multiplication (*):  ${multiplication}`);
+console.log(`Division (/):        ${division}`);
+console.log(`Modulus (%):         ${modulus}`);
+console.log(`Exponentiation (**): ${exponentiation}`);
+
+
+2---
+
+// Define two numbers to compare
+const num1 = 15;
+const num2 = 10;
+
+console.log(`Comparing ${num1} and ${num2}:\n`);
+
+// 1. Greater than (>)
+if (num1 > num2) {
+    console.log(`${num1} is greater than ${num2} (num1 > num2 is true)`);
+}
+
+// 2. Less than (<)
+if (num1 < num2) {
+    console.log(`${num1} is less than ${num2} (num1 < num2 is true)`);
+}
+
+// 3. Strict Equality (===)
+if (num1 === num2) {
+    console.log(`${num1} is exactly equal to ${num2} (num1 === num2 is true)`);
+}
+
+// 4. Strict Inequality (!==)
+if (num1 !== num2) {
+    console.log(`${num1} is not equal to ${num2} (num1 !== num2 is true)`);
+}
+
+// 5. Greater than or equal to (>=)
+if (num1 >= num2) {
+    console.log(`${num1} is greater than or equal to ${num2} (num1 >= num2 is true)`);
+}
+
+// 6. Less than or equal to (<=)
+if (num1 <= num2) {
+    console.log(`${num1} is less than or equal to ${num2} (num1 <= num2 is true)`);
+}
+
+3---
+// Sample variables
+let isLoggedIn = true;
+let hasPermission = false;
+let userAge = 20;
+
+// 1. Logical AND (&&) - Returns true if BOTH conditions are true
+console.log("--- 1. Logical AND (&&) ---");
+console.log("isLoggedIn && hasPermission:", isLoggedIn && hasPermission); // false (true && false)
+console.log("isLoggedIn && (userAge >= 18):", isLoggedIn && (userAge >= 18)); // true (true && true)
+
+// 2. Logical OR (||) - Returns true if AT LEAST ONE condition is true
+console.log("\n--- 2. Logical OR (||) ---");
+console.log("isLoggedIn || hasPermission:", isLoggedIn || hasPermission); // true (true || false)
+console.log("hasPermission || (userAge < 18):", hasPermission || (userAge < 18)); // false (false || false)
+
+// 3. Logical NOT (!) - Inverts the boolean value
+console.log("\n--- 3. Logical NOT (!) ---");
+console.log("!isLoggedIn:", !isLoggedIn); // false (inverts true to false)
+console.log("!hasPermission:", !hasPermission); // true (inverts false to true)
+
+// Practical Example with an if-else statement
+console.log("\n--- Practical Decision Example ---");
+if (userAge >= 18 && isLoggedIn) {
+  console.log("Access granted: User is an adult and logged in.");
+} else {
+  console.log("Access denied.");
+}
+
+4---
+function checkPositive(number) {
+    if (number > 0) {
+        console.log(`${number} is positive.`);
+    } else if (number === 0) {
+        console.log(`${number} is zero.`);
+    } else {
+        console.log(`${number} is negative.`);
+    }
+}
+
+// Test cases
+checkPositive(15);   
+checkPositive(-7);   
+checkPositive(0);    
+
+5---
+function checkEvenOrOdd(number) {
+    if (number % 2 === 0) {
+        console.log(`${number} is even.`);
+    } else {
+        console.log(`${number} is odd.`);
+    }
+}
+
+// Example usage:
+checkEvenOrOdd(4);  .
+checkEvenOrOdd(7);  
+
+6---
+// Get age from user input
+let age = prompt("Enter your age:");
+
+// Convert input string to a number
+age = Number(age);
+
+// Check voting eligibility
+if (age >= 18) {
+    console.log("You are eligible to vote.");
+} else {
+    console.log("You are not eligible to vote.");
+}
+
+7---
+function checkNumber(num) {
+    if (num > 0) {
+        console.log(`${num} is Positive.`);
+    } else if (num < 0) {
+        console.log(`${num} is Negative.`);
+    } else {
+        console.log("The number is Zero.");
+    }
+}
+
+// Test cases
+checkNumber(5);   
+checkNumber(-3);  
+checkNumber(0);   
+
+8---
+// Function to calculate grade based on marks
+function calculateGrade(marks) {
+    let grade;
+
+    // Check for invalid marks first
+    if (marks < 0 || marks > 100) {
+        return "Invalid marks! Please enter a value between 0 and 100.";
+    }
+
+    // Determine the grade using else if ladder
+    if (marks >= 90) {
+        grade = 'A';
+    } else if (marks >= 80) {
+        grade = 'B';
+    } else if (marks >= 70) {
+        grade = 'C';
+    } else if (marks >= 60) {
+        grade = 'D';
+    } else {
+        grade = 'F'; // Executed if marks are below 60
+    }
+
+    return `Marks: ${marks}, Grade: ${grade}`;
+}
+
+// Test cases
+console.log(calculateGrade(95)); 
+console.log(calculateGrade(82));
+console.log(calculateGrade(74));
+console.log(calculateGrade(61)); 
+console.log(calculateGrade(45));
+console.log(calculateGrade(105)); 
+
+9---
+function findLargest(num1, num2) {
+    if (num1 > num2) {
+        return num1;
+    } else {
+        return num2;
+    }
+}
+
+// Example usage:
+let a = 15;
+let b = 25;
+console.log("The largest number is:", findLargest(a, b)); 
+// Output: The largest number is: 25
+
+10---
+function checkLeapYear(year) {
+  if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
+    console.log(`${year} is a leap year.`);
+  } else {
+    console.log(`${year} is not a leap year.`);
+  }
+}
+checkLeapYear(2024);
+
+11---
+// Loop starts at 1, runs while i is less than or equal to 10, and increments by 1 each time
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+
+12---
+function printTable(number) {
+    for (let i = 1; i <= 10; i++) {
+        console.log(`${number} x ${i} = ${number * i}`);
+    }
+}
+
+// Example usage: Print the table of 5
+printTable(5);
+ 
+13---
+function sumOfNaturalNumbers(n) {
+    if (n < 1) return 0; // Natural numbers start from 1
+    return (n * (n + 1)) / 2;
+}
+
+// Example usage:
+const n = 10;
+console.log(`Sum of first ${n} natural numbers is:`, sumOfNaturalNumbers(n)); 
+
+14---
+// Loop starts at the first even number (2) and goes up to 50
+for (let i = 2; i <= 50; i += 2) {
+    console.log(i);
+}
+
+15---
+// JavaScript program to count numbers divisible by 3 between 1 to 100
+let count = 0;
+
+for (let i = 1; i <= 100; i++) {
+    if (i % 3 === 0) {
+        count++;
+    }
+}
+
+console.log("Total numbers divisible by 3:", count);
+
+16---
+function findLargest(num1, num2, num3) {
+    return Math.max(num1, num2, num3);
+}
+
+// Example usage:
+console.log(findLargest(10, 5, 8)); 
+console.log(findLargest(-1, -5, -3)); 
+
+17---
+function checkDivisibility(number) {
+    // Check if the remainder is 0 when divided by both 3 and 5
+    if (number % 3 === 0 && number % 5 === 0) {
+        console.log(`${number} is divisible by both 3 and 5.`);
+    } else {
+        console.log(`${number} is NOT divisible by both 3 and 5.`);
+    }
+}
+
+// Test the function
+checkDivisibility(15); 
+checkDivisibility(9);  
+checkDivisibility(20); 
+
+18---
+function calculateFactorial(num) {
+    // 1. Handle negative numbers (factorial is not defined)
+    if (num < 0) {
+        return "Factorial is not defined for negative numbers.";
+    }
+    
+    // 2. Initialize the result variable to 1
+    let result = 1;
+    
+    // 3. Loop from 2 up to the target number
+    for (let i = 2; i <= num; i++) {
+        result *= i; // Same as result = result * i
+    }
+    
+    return result;
+}
+
+// Example usage:
+const number = 5;
+console.log(`The factorial of ${number} is: ${calculateFactorial(number)}`);
+
+19---
+// Loop starts at 50 and decrements by 1 until it reaches 1
+for (let i = 50; i >= 1; i--) {
+    console.log(i);
+}
+
+20---
+let sum = 0;
+
+// Loop starts at 1, goes up to 100, and increments by 2 each time
+for (let i = 1; i <= 100; i += 2) {
+    sum += i;
+}
+
+console.log("The sum of all odd numbers between 1 and 100 is:", sum);
+
+
+
